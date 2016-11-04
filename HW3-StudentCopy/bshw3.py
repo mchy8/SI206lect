@@ -23,3 +23,8 @@ soup = BeautifulSoup(html, "html.parser")
 
 for word in soup.find_all(class_="field-item"):
 	
+
+	# beautifulsoup 
+	# beautify
+	# replace it 
+	# then apparently turning it into a html sfvidf
