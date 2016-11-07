@@ -21,8 +21,12 @@ r = requests.get(url)
 html = urlopen(url).read()
 soup = BeautifulSoup(html, "html.parser")
 
-for word in soup.find_all(class_="field-item"):
-	
+#print(soup.prettify())
+
+for word in soup.find_all(class_="page"):
+	for words in word.find_all("field-item"):
+		if word.field-item:
+			print(word.field-item.text.replace("sudent", "AMAZING student"))
 
 	# beautifulsoup 
 	# beautify
