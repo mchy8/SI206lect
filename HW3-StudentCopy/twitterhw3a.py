@@ -18,10 +18,12 @@ api_authorization = tweepy.API(auth)
 # api_authorization.update_status(input("What photo would you like to tweet? "))
 
 #or is it:
-photo_path = "~/Desktop/creamcheese.jpg"
-status = "#UMSI-206", "#Proj3"
-api_authorization.update_with_media(photo_path, status=status)
+# photo_path = "creamcheese.jpg"
+status = "#UMSI206 #Proj3"
+api_authorization.update_with_media("creamcheese.jpg", status=status)
 # api_authorization.update_with_media(creamcheese.jpg["#UMSI-206", "#Proj3"])
+
+#issue with update_with_media
 
 
 

@@ -28,6 +28,8 @@ for word in soup.find_all(class_="page"):
 		if word.field-item:
 			print(word.field-item.text.replace("sudent", "AMAZING student"))
 
+
+#cant get it to print anything
 	# beautifulsoup 
 	# beautify
 	# replace it 
