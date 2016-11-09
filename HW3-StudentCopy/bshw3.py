@@ -10,23 +10,22 @@
 # Deliverables
 # Make sure the new page is uploaded to your GitHub account.
 
-import urllib.request
-from urllib.request import urlopen
+import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import requests
+import re
 
-
-url = "https://www.si.umich.edu/programs/bachelor-science-information/bsi-admissions"
-r = requests.get(url)
-html = urlopen(url).read()
+fout = open('output.html','w')
+url = "http://collemc.people.si.umich.edu/data/bshw3StarterFile.html"
+#r = requests.get(url)
+html = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(html, "html.parser")
 
-#print(soup.prettify())
+k = soup.prettify()
 
-for word in soup.find_all(class_="page"):
-	for words in word.find_all("field-item"):
-		if word.field-item:
-			print(word.field-item.text.replace("sudent", "AMAZING student"))
+namechange = re.sub("student", "AMAZING student", k)
+
+fout.write(namechange)
 
 
 #cant get it to print anything
