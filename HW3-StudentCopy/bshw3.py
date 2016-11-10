@@ -25,16 +25,24 @@ def uprint(*objects, sep=' ', end='\n', file=sys.stdout):
         print(*map(f, objects), sep=sep, end=end, file=file)
 
 
-fout = open('output.html','w')
+
 url = "http://collemc.people.si.umich.edu/data/bshw3StarterFile.html"
 r = requests.get(url)
 html = urllib.request.urlopen(url).read()
 soup = BeautifulSoup(r.text, "html.parser")
 
+for mypic in soup.findall("img"):
+	mypic_tags = mypic['src']
+	if "logo2.png" not in mypic_tags:
+		img['src'] = 'C:\Users\Dr\Desktop\206proj3\SI206\HW3-StudentCopy\media\pic_of_me.JPG'
+	else:
+		img['src']= 'C:\Users\Dr\Desktop\206proj3\SI206\HW3-StudentCopy\media\logo.png'
+
 k = soup.prettify()
 
 namechange = re.sub("student", "AMAZING student", k)
 
+fout = open('output.html','w')
 fout.write(namechange)
 fout.close()
 
