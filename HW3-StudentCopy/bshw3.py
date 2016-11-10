@@ -14,22 +14,27 @@ import urllib.request, urllib.parse, urllib.error
 from bs4 import BeautifulSoup
 import requests
 import re
+import sys
+
+def uprint(*objects, sep=' ', end='\n', file=sys.stdout):
+    enc = file.encoding
+    if enc == 'UTF-8':
+        print(*objects, sep=sep, end=end, file=file)
+    else:
+        f = lambda obj: str(obj).encode(enc, errors='backslashreplace').decode(enc)
+        print(*map(f, objects), sep=sep, end=end, file=file)
+
 
 fout = open('output.html','w')
 url = "http://collemc.people.si.umich.edu/data/bshw3StarterFile.html"
-#r = requests.get(url)
+r = requests.get(url)
 html = urllib.request.urlopen(url).read()
-soup = BeautifulSoup(html, "html.parser")
+soup = BeautifulSoup(r.text, "html.parser")
 
 k = soup.prettify()
 
 namechange = re.sub("student", "AMAZING student", k)
 
 fout.write(namechange)
+fout.close()
 
-
-#cant get it to print anything
-	# beautifulsoup 
-	# beautify
-	# replace it 
-	# then apparently turning it into a html sfvidf
