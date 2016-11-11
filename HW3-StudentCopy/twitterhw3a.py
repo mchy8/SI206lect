@@ -19,9 +19,6 @@ api_authorization = tweepy.API(auth)
 
 status = "#UMSI206 #Proj3"
 api_authorization.update_with_media("creamcheese.jpg", status=status)
-# api_authorization.update_with_media(creamcheese.jpg["#UMSI-206", "#Proj3"])
-
-
 
 
 # You will demo this live for grading.

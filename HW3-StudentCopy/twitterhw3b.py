@@ -36,7 +36,7 @@ public_tweets = api.search('cheese')
 
 reeses  = [tweet.text for tweet in public_tweets]
 
-print(reeses)
+uprint(reeses)
 
 # for tweet in public_tweets:
 # 	print(tweet.text)
