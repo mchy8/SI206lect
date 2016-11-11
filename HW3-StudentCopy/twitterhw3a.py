@@ -13,15 +13,11 @@ consumer_secret = "BEkJOoTxvLzgxbJcjqY3wpxntSbrEyeH9S5378sxTTo3glKCZQ"
 
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
+#setting variables
 
 api_authorization = tweepy.API(auth)
-# api_authorization.update_status(input("What photo would you like to tweet? "))
+#setting variable
 
 status = "#UMSI206 #Proj3"
 api_authorization.update_with_media("creamcheese.jpg", status=status)
-
-
-# You will demo this live for grading.
-
-print("""No output necessary although you 
-	can print out a success/failure message if you want to.""")
+#this allows it to update with both the picture and the hashtags

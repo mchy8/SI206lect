@@ -25,15 +25,18 @@ tagged_tokens = nltk.pos_tag(text2)
 
 tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective", "RB":"an adverb"}
 substitution_probabilities = {"NN":.5,"NNS":.5,"VB":.1,"JJ":.1,"RB":.1}
+#this is replacting nouns 15% of the time and everything else 10%
 
 def spaced(word):
 	if word in [",", ".", "?", "!", ":"]:
 		return word
 	else:
 		return " " + word
+		#fixing the spacing issues with punctuation
 
 final_words = []
 x =tagged_tokens[:150]
+#150 tokens of the original text
 
 for (word, tag) in tagged_tokens[:150]:
 	if tag not in substitution_probabilities or random.random() > substitution_probabilities[tag]:
@@ -41,6 +44,7 @@ for (word, tag) in tagged_tokens[:150]:
 	else:
 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
 		final_words.append(spaced(new_word))
+		#this is replacing the original texts with the madlibs
 
 
 def spacing(listy):
@@ -51,6 +55,8 @@ def spacing(listy):
 		else:
 			lst2.append(" "+ words)
 	print("".join(lst2))
+
+#this fixed the 2nd spacing issues
 
 og =[]
 print("\n")

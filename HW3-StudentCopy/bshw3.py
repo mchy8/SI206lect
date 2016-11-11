@@ -35,6 +35,7 @@ k = soup.prettify()
 k = k.replace('https://testbed.files.wordpress.com/2012/09/bsi_exposition_041316_192.jpg','media/pic_of_me.JPG')
 k = k.replace("logo2.png", "media/logo.png")
 k = k.replace("student", "AMAZING student") 
+#just replacing everything with string method because prettify makes it a string
 
 
 fout = open('output.html','w')

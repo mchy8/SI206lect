@@ -30,19 +30,19 @@ auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 
 api = tweepy.API(auth)
-#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
+
 
 public_tweets = api.search('cheese')
 
 reeses  = [tweet.text for tweet in public_tweets]
+#this is pulling the text of the tweets collected
 
 uprint(reeses)
-
-# for tweet in public_tweets:
-# 	print(tweet.text)
+#this helps with char code issues/unicode
 
 subjectivity_accum = 0
 polarity_accum = 0
+#setting them both to zero so can accumulate 
 
 for tweetz in reeses: 
 	snicker = TextBlob(tweetz)
@@ -51,4 +51,6 @@ for tweetz in reeses:
 
 
 print("Average subjectivity is " + str(subjectivity_accum/len(reeses)))
+#dividing the accumulator by the length
 print("Average polarity is "+ str(polarity_accum/len(reeses)))
+#dividing the accumulator by the length
