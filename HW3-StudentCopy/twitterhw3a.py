@@ -6,10 +6,10 @@ from subprocess import call
 from datetime import datetime
 #pulled a lot of this from the twitter code folder
 
-access_token = "708355214034780162-Gbm6kBy0GDkPcy1ZzqogyJDeWy8o31R"
-access_token_secret = "dk8PEiykjkqhaNQaU4gvXoJrDSvU8udCffqSrYQb6GTxs"
-consumer_key = "QayiLxKVV5uwBOGnHvvCcDkCj"
-consumer_secret = "BEkJOoTxvLzgxbJcjqY3wpxntSbrEyeH9S5378sxTTo3glKCZQ"
+access_token = 
+access_token_secret = 
+consumer_key = 
+consumer_secret = 
 
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
